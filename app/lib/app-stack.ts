@@ -6,7 +6,9 @@ import { Construct } from "constructs"
 export class DefaultAppStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props)
-
+    
+    //for PoC create this bucket yourself, assets do not populate unless they're being referenced in a service that utilizes them.
+    
     const assetsStackBucket = new s3.Bucket(this, "AppAssetBucket", {})
   }
 }
